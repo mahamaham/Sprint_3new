@@ -21,7 +21,7 @@ class TestRegistrationPage:
         login_btn_displayed = driver.find_element(*AuthPageLocators.login_account_btn).is_displayed()
 
         assert driver.current_url == URLS.AUTH_PAGE_URL and login_btn_displayed
-        driver.quit()
+
 
     def test_registration_incorrect_password_check_error(self, driver, options):
         # Проверка регистрации пользователя с некорректным паролем (менее 6 символов)
@@ -37,6 +37,6 @@ class TestRegistrationPage:
         error = driver.find_element(*RegistrationPageLocators.error_message_incorrect_password).text
 
         assert (error == 'Некорректный пароль') and (driver.current_url == URLS.REG_PAGE_URL)
-        driver.quit()
+
 
         

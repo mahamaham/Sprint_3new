@@ -19,7 +19,7 @@ class TestLogin:
         order_btn = driver.find_element(*MainPageLocators.place_order_button).text
 
         assert (driver.current_url == URLS.MAIN_PAGE_URL) and (order_btn == 'Оформить заказ')
-        driver.quit()
+
 
     def test_login_in_personal_account_btn_success(self, driver, options):
         # Вход через кнопку 'Личный кабинет'
@@ -33,7 +33,7 @@ class TestLogin:
         order_btn = driver.find_element(*MainPageLocators.place_order_button).text
 
         assert (driver.current_url == URLS.MAIN_PAGE_URL) and (order_btn == 'Оформить заказ')
-        driver.quit()
+
 
     def test_login_in_registration_form_success(self, driver, options):
         # Вход через кнопку в форме регистрации
@@ -47,7 +47,7 @@ class TestLogin:
         order_btn = driver.find_element(*MainPageLocators.place_order_button).text
 
         assert (driver.current_url == URLS.MAIN_PAGE_URL) and (order_btn == 'Оформить заказ')
-        driver.quit()
+
 
     def test_login_in_recover_form_success(self, driver, options):
         # Вход в личный кабинет через форму восстановления пароля
@@ -61,6 +61,6 @@ class TestLogin:
         order_btn = driver.find_element(*MainPageLocators.place_order_button).text
 
         assert (driver.current_url == URLS.MAIN_PAGE_URL) and (order_btn == 'Оформить заказ')
-        driver.quit()
+
 
 

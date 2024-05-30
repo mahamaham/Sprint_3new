@@ -9,11 +9,12 @@ class TestConstructorPage:
         driver.get(URLS.MAIN_PAGE_URL)
         driver.find_element(*MainPageLocators.sauces_btn).click()
         driver.find_element(*MainPageLocators.bun_btn).click()
-        bun_text = driver.find_element(*MainPageLocators.bun).text
-        bun_displayed = driver.find_element(*MainPageLocators.bun_ul).is_displayed()
 
-        assert bun_text == 'Булки' and bun_displayed
-        driver.quit()
+        bun_displayed = driver.find_element(*MainPageLocators.bun_ul).is_displayed()
+        bun_btn_class = driver.find_element(*MainPageLocators.bun_btn).get_attribute('class')
+
+        assert bun_displayed and 'active' in bun_btn_class
+
 
     def test_transition_to_sauces_success(self, driver, options):
         # Проверка перехода к разделу 'Соусы'
@@ -23,7 +24,7 @@ class TestConstructorPage:
         sauces_displayed = driver.find_element(*MainPageLocators.sauces_ul).is_displayed()
 
         assert sauces == 'Соусы' and sauces_displayed
-        driver.quit()
+
 
     def test_transition_to_topping_success(self, driver, options):
         # Проверка перехода к разделу 'Начинки'
@@ -33,5 +34,4 @@ class TestConstructorPage:
         topping_displayed = driver.find_element(*MainPageLocators.topping_ul).is_displayed()
 
         assert topping == 'Начинки' and topping_displayed
-        driver.quit()
-
+        

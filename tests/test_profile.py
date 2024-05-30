@@ -15,7 +15,7 @@ class TestProfileArea:
         save_btn_displayed = driver.find_element(*PersonalAreaLocators.save_btn).is_displayed()
 
         assert driver.current_url == URLS.PROFILE_PAGE_URL and save_btn_displayed
-        driver.quit()
+
 
     def test_transition_from_personal_area_to_constructor_by_click_constructor_btn_success(self, driver, options,
                                                                                            get_login_driver):
@@ -29,7 +29,7 @@ class TestProfileArea:
         bun_displayed = driver.find_element(*MainPageLocators.bun).is_displayed()
 
         assert driver.current_url == URLS.MAIN_PAGE_URL and bun_displayed
-        driver.quit()
+
 
     def test_transition_from_personal_area_to_constructor_by_click_logo_success(self, driver, options,
                                                                                 get_login_driver):
@@ -43,7 +43,7 @@ class TestProfileArea:
         bun_displayed = driver.find_element(*MainPageLocators.bun).is_displayed()
 
         assert driver.current_url == URLS.MAIN_PAGE_URL and bun_displayed
-        driver.quit()
+
 
     def test_logout_from_personal_area_success(self, driver, options, get_login_driver):
         # Проверка выхода из личного кабинета
@@ -56,6 +56,6 @@ class TestProfileArea:
         login_btn_displayed = driver.find_element(*AuthPageLocators.login_account_btn).is_displayed()
 
         assert driver.current_url == URLS.AUTH_PAGE_URL and login_btn_displayed
-        driver.quit()
+
 
 
